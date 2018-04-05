@@ -7,10 +7,10 @@
  */
 
 function open_database() {
-    $servidor = "localhost";
-    $usuario = "mysql";
-    $senha = "sabakutaiso";
-    $banco = "Vendas";
+    $servidor = "mysql472.umbler.com";
+    $usuario = "matheuswebdev";
+    $senha = "sabakutaiso7589";
+    $banco = "vendas";
     try {
         $con = new mysqli($servidor, $usuario, $senha, $banco);
         $con->set_charset("utf8");
