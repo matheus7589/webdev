@@ -17,3 +17,4 @@ function inicio() { // vai fazer a listagem de produtos que estão no banco no b
     $produtos = procurar_todos('Produtos');
 }
 
+

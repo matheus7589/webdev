@@ -5,6 +5,8 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -16,9 +18,19 @@ body {
   margin: 0;
 }
 
+footer{
+    display: block;
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+}
+
 article,
 aside,
-footer,
 header,
 nav,
 section {

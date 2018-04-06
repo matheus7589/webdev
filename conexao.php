@@ -7,10 +7,10 @@
  */
 
 function open_database() {
-    $servidor = "mysql472.umbler.com";
-    $usuario = "matheuswebdev";
-    $senha = "sabakutaiso7589";
-    $banco = "vendas";
+    $servidor = "localhost";
+    $usuario = "mysql";
+    $senha = "sabakutaiso";
+    $banco = "Vendas";
     try {
         $con = new mysqli($servidor, $usuario, $senha, $banco);
         $con->set_charset("utf8");
@@ -27,6 +27,23 @@ function close_database($conn) {
     } catch (Exception $e) {
         echo $e->getMessage();
     }
+}
+
+function login($table, $user, $password){
+
+    $database = open_database();
+    $found = null;
+    try{
+        $sql = "SELECT * FROM " . $table . " WHERE usuario LIKE '%" . $user . "%' AND senha LIKE '%" . $password . "%' ";
+        $result = $database->query($sql);
+        if ($result->num_rows > 0)
+                $found = $result->fetch_assoc();
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+    return $found;
 }
 
 /**
@@ -73,7 +90,7 @@ function save($table = null, $data = null) {
     // remove a ultima virgula
     $columns = rtrim($columns, ',');
     $values = rtrim($values, ',');
-    echo "Ate aquoi";
+    // echo "Ate aquoi";
     $sql = "INSERT INTO " . $table . "($columns)" . " VALUES " . "($values);";
     try {
         $database->query($sql);

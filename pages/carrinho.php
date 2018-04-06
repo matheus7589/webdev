@@ -64,7 +64,7 @@ if (isset($_GET['acao'])) {
                     <a href="carrinho.php?acao=comprar"><input type="button" style="align-items: left;" class="btn btn-sm btn-primary" value="Realizar Compra!" /></a>
                 </td>
             <tr>
-                <td colspan="5"><a href="../index.php">Continuar Comprando</a></td>
+                <td colspan="5"><a href="../list.php">Continuar Comprando</a></td>
         </tfoot>
         <tbody>
             <?php if (count($_SESSION['carrinho']) == 0): ?>
