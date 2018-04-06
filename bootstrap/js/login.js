@@ -1,5 +1,4 @@
 $(function(){
-	window.history.forward(1);
 	$('#logar').on('click', function(){
 		var dados = {}
 		dados.user = $('#userName').val();

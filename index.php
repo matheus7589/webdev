@@ -4,6 +4,11 @@ require_once './config.php';
 require_once('./mainController.php');
 
 session_start();
+if (isset($_SESSION['user'])) { // verifica se existe a variavel de sessao carrinho 
+	if($_SESSION['user']['is_logado'] == true){
+    	header('location: list.php');
+    }
+}
 ?>
 
 <html>

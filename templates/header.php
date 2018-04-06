@@ -23,23 +23,27 @@ and open the template in the editor.
             </button>
             <a class="navbar-brand" href="../index.php">iVendas</a>
 
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault" style="margin-right: 15px;">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="../pages/carrinho.php">Meu carrinho <span class="badge"><?php echo count($_SESSION['carrinho']); ?></span></a>
                     </li>
+                    <?php if($_SESSION['user']['is_admin'] == "1") { ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administração</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown01">
                             <a class="dropdown-item" href="CRUD.php">Adicionar itens</a>
+                            <a class="dropdown-item" href="addUsers.php">Adicionar usuários</a>
                         </div>
                     </li>
+                    <?php } ?>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
                 </form>
             </div>
+            <a class="navbar-brand pull-right" href="../controller/logout.php">Sair</a>
         </nav>        
         
 
